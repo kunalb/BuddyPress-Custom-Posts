@@ -1,9 +1,9 @@
 === BuddyPress Custom Posts  ===
 Contributors: kunalb
 Tags: BuddyPress, Custom Posts, Custom Components, For Developers 
-Requires at least: WordPress 3.1, BuddyPress 1.2.8
-Tested up to: 3.1
-Stable tag: 0.1.2.4
+Requires at least: WordPress 3.2, BuddyPress 1.3
+Tested up to: 3.2
+Stable tag: 0.2
 
 Provides an API to create custom components in BuddyPress around custom post types in WordPress. This plugin is meant to be used by developers to map custom post types to custom components in BuddyPress.
 
@@ -28,28 +28,28 @@ Because.
 
 == Changelog ==
 
+= 0.2 =
+* Complete rewrite of the plugin.
+
 = 0.1.2.4 =
-Minor changes -- cleaned up js/css includes. Added support for WP3.1.
+* Minor changes -- cleaned up js/css includes. Added support for WP3.1.
 
 = 0.1.2.3 = 
-Fixes the register button bug.
+* Fixes the register button bug.
 
 = 0.1.2.2 =
-See http://code.google.com/p/buddypress-custom-posts/issues/list?can=1&q=label%3AMilestone-0.1.2.2 for complete changes.
+* See http://code.google.com/p/buddypress-custom-posts/issues/list?can=1&q=label%3AMilestone-0.1.2.2 for complete changes.
 
 = 0.1.2.1 =
-Solved another capability problem that cropped up.
+* Solved another capability problem that cropped up.
 
 = 0.1.2 =
-See http://code.google.com/p/buddypress-custom-posts/issues/list?can=1&q=label%3AMilestone-0.1.2 for complete changes.
-Highlights
- * .pot file included.
- * Activity bug resolved.
+* .pot file included.
+* Activity bug resolved.
 
 = 0.1.1 =
-Bugfixes:
- * Removed dependence on folder name.
+* Removed dependence on folder name.
 
 = 0.1 =
-First version
+* First version
 
