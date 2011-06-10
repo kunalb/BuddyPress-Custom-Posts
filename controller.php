@@ -824,12 +824,13 @@ class bpcp {
 			$object = get_post_type_object( $post->post_type );
 
 			$args = Array( 
-				'action' => sprintf( __( "%s created the %s <a href = '%s'>%s</a>." ), bp_core_get_userlink( $post->post_author ), $object->labels->singular_name, get_permalink( $post->ID ), get_the_title( $post_id ) ),
+				'action' => sprintf( __( "%s created the %s <a href = '%s'>%s</a>." ), bp_core_get_userlink( $post->post_author ), $object->labels->singular_name, get_permalink( $post->ID ), $post->post_title ),
 				'content' => '',
 				'type' => 'new_' . $object->id
 			);
 
 			$args = apply_filters( 'bpcp_create_' . $object->id . '_activity', apply_filters( 'bpcp_create_activity', $args, $post->ID ), $post->ID );	
+			do_action( 'bpcp_create_activity', $args );
 
 			bp_activity_add( Array(
 				'action' => $args['action'],
@@ -839,7 +840,6 @@ class bpcp {
 				'user_id' => $post->post_author,
 				'item_id' => $post->ID
 			) );
-
 		} else return false;
 	}
 
@@ -881,29 +881,26 @@ class bpcp {
 	 * @since 0.1
 	 */
 	function edit_post_activity( $postid, $post ) {
-		//Eliminating Create
-		if ( !( $new_status != $old_status && $new_status == 'publish' && $post->post_type == $this->id  ) ) {
-			if ( $post->post_status == 'publish' && $post->post_type == $this->id ) {
-				$object = get_post_type_object( $post->post_type );
+		if ( $post->post_status == 'publish' && $post->post_type == $this->id && did_action( 'bpcp_create_activity' ) <= 0 ) {
+			$object = get_post_type_object( $post->post_type );
 
-				$args = Array( 
-					'action' => sprintf( __( "%s updated the %s <a href = '%s'>%s</a>." ), bp_core_get_userlink( $post->post_author ), $object->labels->singular_name, get_permalink( $post->ID ), get_the_title( $post->ID ) ),
-					'content' => '',
-					'type' => 'activity_update'
-				);
+			$args = Array( 
+				'action' => sprintf( __( "%s updated the %s <a href = '%s'>%s</a>." ), bp_core_get_userlink( $post->post_author ), $object->labels->singular_name, get_permalink( $post->ID ), get_the_title( $post->ID ) ),
+				'content' => '',
+				'type' => 'activity_update'
+			);
 
-				$args = apply_filters( 'bpcp_edit_' . $object->id . '_activity', apply_filters( 'bpcp_edit_activity', $args, $post->ID ) );
+			$args = apply_filters( 'bpcp_edit_' . $object->id . '_activity', apply_filters( 'bpcp_edit_activity', $args, $post->ID ) );
 
-				bp_activity_add( Array(
-					'action' => $args['action'],
-					'component' => $this->id,
-					'content' => $args['content'],
-					'type' => $args['type'],
-					'user_id' => $post->post_author,
-					'item_id' => $post->ID
-				) );
-			}
-		}
+			bp_activity_add( Array(
+				'action' => $args['action'],
+				'component' => $this->id,
+				'content' => $args['content'],
+				'type' => $args['type'],
+				'user_id' => $post->post_author,
+				'item_id' => $post->ID
+			) );
+		} else return false;
 	}
 
 	/**
