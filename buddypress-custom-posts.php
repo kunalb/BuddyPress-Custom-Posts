@@ -3,7 +3,7 @@
 	Plugin Name: BuddyPress Custom Posts
 	Plugin URI: http://code.google.com/p/buddypress-custom-posts/
 	Description: Provides an API to register custom posts as custom components. See more details, raise issues and contribute at <a href = 'http://goo.gl/pBeuL'>http://code.google.com/p/buddypress-custom-posts/</a>.
-	Version: 0.1.2.4
+	Version: 0.1.2.5
 	Author: Kunal Bhalla. 
 	Author URI: http://kunal-b.in
 	License: GPL2
