@@ -28,28 +28,31 @@ Because.
 
 == Changelog ==
 
+= 0.1.2.5 =
+* Modified the editor to not appear broken with the new full screen editor.
+* NOTE: The full screen editor is not supported in this release!
+* Corrected create/edit activity stream errors.
+
 = 0.1.2.4 =
-Minor changes -- cleaned up js/css includes. Added support for WP3.1.
+* Minor changes -- cleaned up js/css includes. Added support for WP3.1.
 
 = 0.1.2.3 = 
-Fixes the register button bug.
+* Fixes the register button bug.
 
 = 0.1.2.2 =
-See http://code.google.com/p/buddypress-custom-posts/issues/list?can=1&q=label%3AMilestone-0.1.2.2 for complete changes.
+* See http://code.google.com/p/buddypress-custom-posts/issues/list?can=1&q=label%3AMilestone-0.1.2.2 for complete changes.
 
 = 0.1.2.1 =
-Solved another capability problem that cropped up.
+* Solved another capability problem that cropped up.
 
 = 0.1.2 =
-See http://code.google.com/p/buddypress-custom-posts/issues/list?can=1&q=label%3AMilestone-0.1.2 for complete changes.
-Highlights
- * .pot file included.
- * Activity bug resolved.
+* See http://code.google.com/p/buddypress-custom-posts/issues/list?can=1&q=label%3AMilestone-0.1.2 for complete changes.
+* .pot file included.
+* Activity bug resolved.
 
 = 0.1.1 =
-Bugfixes:
- * Removed dependence on folder name.
+* Removed dependence on folder name.
 
 = 0.1 =
-First version
+* First version
 
