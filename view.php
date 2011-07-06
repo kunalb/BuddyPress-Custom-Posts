@@ -255,9 +255,9 @@ class bpcp_V {
 
 		if ( post_type_supports($typenow, 'editor') ) {
 			wp_enqueue_script( 'utils' );
-			wp_enqueue_script( 'quicktags' );
-			wp_enqueue_script( 'editor' );
-			wp_enqueue_script( 'tinymce', $include_url . '/js/tinymce/tiny_mce.js' );
+		//	wp_enqueue_script( 'quicktags' );
+		//	wp_enqueue_script( 'editor' );
+		//	wp_enqueue_script( 'tinymce', $include_url . '/js/tinymce/tiny_mce.js' );
 			wp_enqueue_script( 'bpcp_editor', BPCP_THEMES_ASSETS . 'js/editor' . kb_ext() . '.js' );
 			
 			wp_enqueue_script( 'word-count', $admin_url . '/js/word-count.js' );
@@ -273,7 +273,11 @@ class bpcp_V {
 		}
 
 		add_thickbox();
-		add_action( 'bp_after_footer', 'wp_tiny_mce' );
+
+		if( user_can_richedit() )
+			add_action( 'bp_after_footer', 'wp_tiny_mce' );
+		else
+			add_action( 'bp_after_footer', 'wp_quicktags' );
 
 		//Registering metaboxes
 		//Basic publish button
