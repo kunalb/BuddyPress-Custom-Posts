@@ -3,7 +3,7 @@ Contributors: kunalb
 Tags: BuddyPress, Custom Posts, Custom Components, For Developers 
 Requires at least: WordPress 3.1, BuddyPress 1.2.8
 Tested up to: 3.1
-Stable tag: 0.1.2.4
+Stable tag: 0.1.2.5
 
 Provides an API to create custom components in BuddyPress around custom post types in WordPress. This plugin is meant to be used by developers to map custom post types to custom components in BuddyPress.
 
